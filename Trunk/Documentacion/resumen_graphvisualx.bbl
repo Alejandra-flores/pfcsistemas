@@ -1,0 +1,103 @@
+\begin{thebibliography}{10}
+
+\bibitem{aho}
+Alfred~V. Aho, John~E. Hopcroft, and Jeffrey~D. Ullman.
+\newblock {\em Estructuras de datos y algoritmos}.
+\newblock México [etc.] : Pearson Educación, 1998.
+\newblock I.S.B.N.: 968-444-345-5.
+
+\bibitem{graphs}
+Claude Berge.
+\newblock {\em Graphs}.
+\newblock Elsevier Science Publishers B.V., 1989.
+\newblock I.S.B.N.: 0-444-87603-0.
+
+\bibitem{brassard}
+G.~Brassard and P.~Bratley.
+\newblock {\em Fundamentos de algoritmia}.
+\newblock Madrid [etc.] : Prentice Hall, D.L., 2008.
+\newblock I.S.B.N.: 978-84-89660-007.
+
+\bibitem{java}
+Eckel Bruce.
+\newblock {\em Piensa en Java; traducción, Vuelapluma 2ª ed.}
+\newblock Madrid [etc.] : Prentice Hall, 2002.
+\newblock I.S.B.N.: 978-84-8966-034-2.
+
+\bibitem{latex}
+Bernardo Cascales~Salinas.
+\newblock {\em \LaTeX{}: una imprenta en sus manos}.
+\newblock Madrid : Aula Documental de Investigación, 2000.
+\newblock I.S.B.N.: 9788492038190.
+
+\bibitem{cormen}
+Thomas~H. Cormen.
+\newblock {\em Introduction to algorithms 3rd ed.}
+\newblock London : Mit, 2009.
+\newblock I.S.B.N.:978-0-2625-3305-8.
+
+\bibitem{np}
+Michael~R. Garey and David~S. Johnson.
+\newblock {\em Computers and intractability : a guide to the Theory of
+  NP-Completeness [26th print.]}.
+\newblock New York, NY : W. H. Freeman, 2003.
+\newblock I.S.B.N.:0-7167-1045-5.
+
+\bibitem{gibbons}
+Alan Gibbons.
+\newblock {\em Algorithmic graph theory}.
+\newblock Cambridge University Press, 1985.
+\newblock I.S.B.N.: 0-521-28881-9.
+
+\bibitem{graph-theory}
+Frank Harary.
+\newblock {\em Graph theory}.
+\newblock Addison-Wesley, 1969 (1996 reimpr.).
+\newblock I.S.B.N.: 0-201-02787-9.
+
+\bibitem{hopcroft}
+John~E. Hopcroft, Rajeev Motwani, and Jeffrey~D. Ullman.
+\newblock {\em Introducción a la teoría de autómatas, lenguajes y
+  computación 3ª ed.}
+\newblock Madrid : Pearson Alhambra, 2008.
+\newblock I.S.B.N.: 978-84-7829-088-8.
+
+\bibitem{m.discreta}
+Rosen Kenneth~H.
+\newblock {\em Matemática discreta y sus aplicaciones}.
+\newblock McGraw-Hill, 2004.
+\newblock I.S.B.N.: 84-481-4073-7.
+
+\bibitem{levitin}
+Anany Levitin.
+\newblock {\em Introduction to the design \& analysis of algorithms 2nd ed.}
+\newblock Boston : Addison-Wesley, 2007.
+\newblock I.S.B.N.: 0-321-36413-9.
+
+\bibitem{neapolitan}
+Richard Neapolitan and Kumarss Naimipour.
+\newblock {\em Foundations of algorithms}.
+\newblock Boston: Jones and Bartlett, 2011.
+\newblock I.S.B.N.:978-0-7637-8250-4.
+
+\bibitem{c++}
+Robert Sedgewick.
+\newblock {\em Algorithms in C++ 3ª ed.}
+\newblock Addison-Wesley, 2003.
+\newblock I.S.B.N.:0-201-36118-3 (Parte 5), 0-201-35088-2 (Parte 1-4).
+
+\bibitem{book:design}
+Steven~S. Skiena.
+\newblock {\em The algorithm design manual 2ª ed.}
+\newblock New York : Springer, 2008.
+\newblock I.S.B.N.: 1-84800-069-3.
+
+\bibitem{tikz}
+Tantau Till.
+\newblock {\em The Tikz and Pgf Packages: Manual for version 2.10}, 2010.
+
+\bibitem{beamer}
+Vedran~Miletić Till~Tantau, Joseph~Wright.
+\newblock {\em The Beamer Class: Guide for version 3.10}, 2010.
+
+\end{thebibliography}

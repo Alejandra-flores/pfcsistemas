@@ -1,0 +1,45 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Método observador.}
+\PY{c+cm}{ * Muestra por la salida estándar el recorrido en anchura del grafo G.}
+\PY{c+cm}{ * @param G matriz de adyacencia del grafo conexo.}
+\PY{c+cm}{ */}
+
+\PY{k+kd}{public} \PY{k+kt}{void} \PY{n+nf}{recorrido\PYZus{}anchura}\PY{o}{(}\PY{k+kt}{int} \PY{o}{[}\PY{o}{]}\PY{o}{[}\PY{o}{]} \PY{n}{G}\PY{o}{)} 
+\PY{o}{\PYZob{}}
+    \PY{k+kt}{int} \PY{n}{tama\PYZus{}G} \PY{o}{=} \PY{n}{G}\PY{o}{.}\PY{n+na}{length}\PY{o}{;}
+
+    \PY{k+kt}{boolean} \PY{o}{[}\PY{o}{]} \PY{n}{marcas} \PY{o}{=} \PY{k}{new} \PY{k+kt}{boolean} \PY{o}{[}\PY{n}{tama\PYZus{}G}\PY{o}{]}\PY{o}{;}
+    \PY{k+kt}{int} \PY{n}{i}\PY{o}{,}\PY{n}{v}\PY{o}{,}\PY{n}{w}\PY{o}{;} \PY{c+c1}{//Vértices.}
+
+    \PY{n}{LinkedList}\PY{o}{<}\PY{n}{Integer}\PY{o}{>} \PY{n}{Cola} \PY{o}{=} \PY{k}{new} \PY{n}{LinkedList}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+    \PY{n}{rec\PYZus{}breadth} \PY{o}{=} \PY{k}{new} \PY{n}{ArrayList}\PY{o}{<}\PY{n}{Integer}\PY{o}{>}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+
+    \PY{n}{Arrays}\PY{o}{.}\PY{n+na}{fill}\PY{o}{(}\PY{n}{marcas}\PY{o}{,}\PY{l+m+mi}{0}\PY{o}{,}\PY{n}{tama\PYZus{}G}\PY{o}{,}\PY{k+kc}{false}\PY{o}{)}\PY{o}{;}
+    \PY{n}{System}\PY{o}{.}\PY{n+na}{out}\PY{o}{.}\PY{n+na}{println}\PY{o}{(}\PY{l+s}{"REC\PYZus{}ANCHURA"}\PY{o}{)}\PY{o}{;}
+    \PY{k}{for}\PY{o}{(}\PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;} \PY{n}{i} \PY{o}{<} \PY{n}{tama\PYZus{}G}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{o}{)}
+	\PY{k}{if}\PY{o}{(}\PY{o}{!}\PY{n}{marcas}\PY{o}{[}\PY{n}{i}\PY{o}{]}\PY{o}{)} \PY{c+c1}{//NO visitado}
+	    \PY{o}{\PYZob{}}
+		\PY{n}{Cola}\PY{o}{.}\PY{n+na}{add}\PY{o}{(}\PY{n}{i}\PY{o}{)}\PY{o}{;} \PY{c+c1}{//Frente de la Cola}
+		    
+		\PY{k}{do}\PY{o}{\PYZob{}}
+		    \PY{n}{v} \PY{o}{=} \PY{n}{Cola}\PY{o}{.}\PY{n+na}{getFirst}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+		    \PY{n}{Cola}\PY{o}{.}\PY{n+na}{removeFirst}\PY{o}{(}\PY{o}{)}\PY{o}{;} \PY{c+c1}{//Eliminamos el elemento.}
+		    \PY{k}{if}\PY{o}{(}\PY{o}{!}\PY{n}{marcas}\PY{o}{[}\PY{n}{v}\PY{o}{]}\PY{o}{)} \PY{c+c1}{//NO visitado.}
+			\PY{o}{\PYZob{}}
+			    \PY{c+cm}{/* Marcar y procesar. */}
+			    \PY{n}{marcas}\PY{o}{[}\PY{n}{v}\PY{o}{]} \PY{o}{=} \PY{k+kc}{true}\PY{o}{;} \PY{c+c1}{//Visitado.}
+			    \PY{n}{System}\PY{o}{.}\PY{n+na}{out}\PY{o}{.}\PY{n+na}{print}\PY{o}{(}\PY{n}{v}\PY{o}{+}\PY{l+s}{" "}\PY{o}{)}\PY{o}{;}
+			    \PY{n}{rec\PYZus{}breadth}\PY{o}{.}\PY{n+na}{add}\PY{o}{(}\PY{n}{v}\PY{o}{)}\PY{o}{;}
+				
+			    \PY{c+cm}{/* Encolar los adyacentes no visitados. */}
+
+			    \PY{k}{for}\PY{o}{(}\PY{n}{w}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;} \PY{n}{w} \PY{o}{<} \PY{n}{tama\PYZus{}G}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{w}\PY{o}{)}
+				\PY{k}{if}\PY{o}{(}\PY{n}{G}\PY{o}{[}\PY{n}{v}\PY{o}{]}\PY{o}{[}\PY{n}{w}\PY{o}{]} \PY{o}{=}\PY{o}{=} \PY{l+m+mi}{1} \PY{o}{&}\PY{o}{&} \PY{n}{marcas}\PY{o}{[}\PY{n}{w}\PY{o}{]} \PY{o}{=}\PY{o}{=} \PY{k+kc}{false}\PY{o}{)}
+				    \PY{n}{Cola}\PY{o}{.}\PY{n+na}{add}\PY{o}{(}\PY{n}{w}\PY{o}{)}\PY{o}{;}
+			\PY{o}{\PYZcb{}}
+		\PY{o}{\PYZcb{}}\PY{k}{while}\PY{o}{(}\PY{o}{!}\PY{o}{(}\PY{n}{Cola}\PY{o}{.}\PY{n+na}{isEmpty}\PY{o}{(}\PY{o}{)}\PY{o}{)}\PY{o}{)}\PY{o}{;}
+	    \PY{o}{\PYZcb{}}
+    \PY{n}{System}\PY{o}{.}\PY{n+na}{out}\PY{o}{.}\PY{n+na}{println}\PY{o}{(}\PY{l+s}{""}\PY{o}{)}\PY{o}{;}
+\PY{o}{\PYZcb{}}
+\end{Verbatim}

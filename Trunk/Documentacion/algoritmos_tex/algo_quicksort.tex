@@ -1,0 +1,76 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Método observador (Algoritmo de QuickSort - Ordenación Rápida)}
+\PY{c+cm}{ * Supongamos que un elemento arbitrario p de los n índices o elementos }
+\PY{c+cm}{ * que tenemos que ordenar. Quicksort separa los n-1 restantes elementos }
+\PY{c+cm}{ * en dos montones: un primer montón inferior que contiene todos los }
+\PY{c+cm}{ * elementos que aparecen antes de p en orden creciente (son menores que p)}
+\PY{c+cm}{ * y otro montón superior que contiene todos los elementos que aparecen }
+\PY{c+cm}{ * después de p en orden creciente (son mayores que p). }
+\PY{c+cm}{ * Los montones inferior y superior denotan las posiciones de los }
+\PY{c+cm}{ * elementos del vector, colocando un elemento central o pivote que }
+\PY{c+cm}{ * diferencia ambos montones.}
+\PY{c+cm}{ * @param x índice del primer elemento de la estructura.}
+\PY{c+cm}{ * @param y índide del último elemento de la estructura.}
+\PY{c+cm}{ * @return void}
+\PY{c+cm}{ */}
+
+
+\PY{k+kd}{private} \PY{k+kt}{void} \PY{n+nf}{Quicksort}\PY{o}{(}\PY{k+kt}{int} \PY{n}{x}\PY{o}{,} \PY{k+kt}{int} \PY{n}{y}\PY{o}{)}
+\PY{o}{\PYZob{}}
+    \PY{k}{if}\PY{o}{(}\PY{n}{y} \PY{o}{<}\PY{o}{=} \PY{n}{x}\PY{o}{)}
+	\PY{k}{return}\PY{o}{;}
+
+    \PY{k+kt}{int} \PY{n}{i} \PY{o}{=} \PY{n}{particion}\PY{o}{(}\PY{n}{x}\PY{o}{,}\PY{n}{y}\PY{o}{)}\PY{o}{;}
+
+    \PY{n}{Quicksort}\PY{o}{(}\PY{n}{x}\PY{o}{,}\PY{n}{i}\PY{o}{-}\PY{l+m+mi}{1}\PY{o}{)}\PY{o}{;}
+    \PY{n}{Quicksort}\PY{o}{(}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{o}{,}\PY{n}{y}\PY{o}{)}\PY{o}{;}
+\PY{o}{\PYZcb{}}
+
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Función auxiliar que busca el pivote de la estructura que pasemos.}
+\PY{c+cm}{ * @param x: valor entero que representa la posición inicial de la }
+\PY{c+cm}{ * estructura interna.}
+\PY{c+cm}{ * @param y: valor entero que representa el numero de elementos total}
+\PY{c+cm}{ * de la estructura. (Indice final de la estructura)}
+\PY{c+cm}{ */}
+
+\PY{k+kd}{private} \PY{k+kt}{int} \PY{n+nf}{particion} \PY{o}{(}\PY{k+kt}{int} \PY{n}{x}\PY{o}{,} \PY{k+kt}{int} \PY{n}{y}\PY{o}{)}
+\PY{o}{\PYZob{}}
+    \PY{k+kt}{int} \PY{n}{i} \PY{o}{=} \PY{n}{x}\PY{o}{-}\PY{l+m+mi}{1}\PY{o}{,} \PY{n}{j} \PY{o}{=} \PY{n}{y}\PY{o}{;}
+    \PY{n}{Arista} \PY{n}{v} \PY{o}{=} \PY{k}{new} \PY{n}{Arista}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+    \PY{n}{v}\PY{o}{.}\PY{n+na}{v\PYZus{}origen}\PY{o}{(}\PY{n}{vector\PYZus{}kruskal}\PY{o}{.}\PY{n+na}{get}\PY{o}{(}\PY{n}{y}\PY{o}{)}\PY{o}{.}\PY{n+na}{v\PYZus{}origen}\PY{o}{(}\PY{o}{)}\PY{o}{)}\PY{o}{;}
+    \PY{n}{v}\PY{o}{.}\PY{n+na}{v\PYZus{}destino}\PY{o}{(}\PY{n}{vector\PYZus{}kruskal}\PY{o}{.}\PY{n+na}{get}\PY{o}{(}\PY{n}{y}\PY{o}{)}\PY{o}{.}\PY{n+na}{v\PYZus{}destino}\PY{o}{(}\PY{o}{)}\PY{o}{)}\PY{o}{;}
+    \PY{n}{v}\PY{o}{.}\PY{n+na}{coste}\PY{o}{(}\PY{n}{vector\PYZus{}kruskal}\PY{o}{.}\PY{n+na}{get}\PY{o}{(}\PY{n}{y}\PY{o}{)}\PY{o}{.}\PY{n+na}{coste}\PY{o}{(}\PY{o}{)}\PY{o}{)}\PY{o}{;}
+
+    \PY{k}{for}\PY{o}{(}\PY{o}{;}\PY{o}{;}\PY{o}{)}
+	\PY{o}{\PYZob{}}
+	    \PY{k}{while}\PY{o}{(}\PY{n}{vector\PYZus{}kruskal}\PY{o}{.}\PY{n+na}{get}\PY{o}{(}\PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{o}{)}\PY{o}{.}\PY{n+na}{coste}\PY{o}{(}\PY{o}{)} \PY{o}{<} \PY{n}{v}\PY{o}{.}\PY{n+na}{coste}\PY{o}{(}\PY{o}{)}\PY{o}{)}\PY{o}{;}
+
+	    \PY{k}{while}\PY{o}{(}\PY{n}{v}\PY{o}{.}\PY{n+na}{coste}\PY{o}{(}\PY{o}{)} \PY{o}{<} \PY{n}{vector\PYZus{}kruskal}\PY{o}{.}\PY{n+na}{get}\PY{o}{(}\PY{o}{-}\PY{o}{-}\PY{n}{j}\PY{o}{)}\PY{o}{.}\PY{n+na}{coste}\PY{o}{(}\PY{o}{)}\PY{o}{)}
+		\PY{k}{if}\PY{o}{(}\PY{n}{j} \PY{o}{=}\PY{o}{=} \PY{n}{x}\PY{o}{)}
+		    \PY{k}{break}\PY{o}{;}
+
+	    \PY{k}{if}\PY{o}{(}\PY{n}{i} \PY{o}{>}\PY{o}{=} \PY{n}{j}\PY{o}{)}
+		\PY{k}{break}\PY{o}{;}
+
+	    \PY{n}{cambio}\PY{o}{(}\PY{n}{i}\PY{o}{,}\PY{n}{j}\PY{o}{)}\PY{o}{;}
+	\PY{o}{\PYZcb{}}
+
+    \PY{n}{cambio}\PY{o}{(}\PY{n}{i}\PY{o}{,}\PY{n}{y}\PY{o}{)}\PY{o}{;}
+    \PY{k}{return} \PY{n}{i}\PY{o}{;}
+\PY{o}{\PYZcb{}}
+
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Método modificador. (privado)}
+\PY{c+cm}{ * El método intercambia los valores de las posiciones vertice\PYZus{}i y}
+\PY{c+cm}{ * vertice\PYZus{}j de la estructura interna que almacena los nodos adyacentes}
+\PY{c+cm}{ * por cada uno de los nodos del grafo de trabajo.}
+\PY{c+cm}{ * @param vertice\PYZus{}i: valor entero que representa un vértice de la arista}
+\PY{c+cm}{ * (u,v) (u)}
+\PY{c+cm}{ * @param vertice\PYZus{}j: valor entero que representa el otro vértice de la }
+\PY{c+cm}{ * arista (u,v) (v)}
+\PY{c+cm}{ */}
+
+\PY{k+kd}{private} \PY{k+kt}{void} \PY{n+nf}{cambio}\PY{o}{(}\PY{k+kt}{int} \PY{n}{vertice\PYZus{}i}\PY{o}{,} \PY{k+kt}{int} \PY{n}{vertice\PYZus{}j}\PY{o}{)}
+\end{Verbatim}
