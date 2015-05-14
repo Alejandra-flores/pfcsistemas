@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Método observador.}
+\PY{c+cm}{ * Comprueba si el grafo (o componente) es vacío o no.}
+\PY{c+cm}{ * Esta función comprueba que hay vértice pero no tiene aristas.}
+\PY{c+cm}{ * @return boolean: devolverá true o false si el grafo es o no vacío.}
+\PY{c+cm}{ * @exception Exception}
+\PY{c+cm}{ */}
+
+\PY{k+kd}{public} \PY{k+kt}{boolean} \PY{n+nf}{es\PYZus{}vacio}\PY{o}{(}\PY{o}{)} \PY{k+kd}{throws} \PY{n}{Exception}
+\PY{o}{\PYZob{}}
+    \PY{k}{if}\PY{o}{(}\PY{k}{this}\PY{o}{.}\PY{n+na}{n\PYZus{}aristas}\PY{o}{(}\PY{o}{)} \PY{o}{=}\PY{o}{=} \PY{l+m+mi}{0}\PY{o}{)}
+	\PY{o}{\PYZob{}}
+	    \PY{n}{System}\PY{o}{.}\PY{n+na}{out}\PY{o}{.}\PY{n+na}{println}\PY{o}{(}\PY{l+s}{"El grafo es vacío"}\PY{o}{)}\PY{o}{;}
+	    \PY{k}{return} \PY{k+kc}{true}\PY{o}{;}
+	\PY{o}{\PYZcb{}}
+    \PY{k}{else}
+	\PY{k}{return} \PY{k+kc}{false}\PY{o}{;}
+\PY{o}{\PYZcb{}}
+\end{Verbatim}

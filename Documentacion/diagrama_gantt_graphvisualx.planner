@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<project name="Graphvisualx" company="" manager="" phase="" project-start="20110426T000000Z" mrproject-version="2" calendar="1">
+  <properties/>
+  <phases/>
+  <calendars>
+    <day-types>
+      <day-type id="0" name="Jornada laboral" description="Un d&#xED;a de trabajo predeterminado"/>
+      <day-type id="1" name="Jornada de descanso" description="Un d&#xED;a de descanso predeterminado"/>
+      <day-type id="2" name="Usar base" description="Usar d&#xED;a del calendario base"/>
+    </day-types>
+    <calendar id="1" name="Predeterminado">
+      <default-week mon="0" tue="0" wed="0" thu="0" fri="0" sat="1" sun="1"/>
+      <overridden-day-types>
+        <overridden-day-type id="0">
+          <interval start="0800" end="1200"/>
+          <interval start="1300" end="1700"/>
+        </overridden-day-type>
+      </overridden-day-types>
+      <days/>
+    </calendar>
+  </calendars>
+  <tasks>
+    <task id="1" name="Tarea 1" note="" work="57600" start="20110426T000000Z" end="20110427T170000Z" work-start="20110426T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work"/>
+    <task id="2" name="Tarea 2" note="" work="90000" start="20110427T000000Z" end="20110502T090000Z" work-start="20110427T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110427T000000Z"/>
+    </task>
+    <task id="3" name="Tarea 3" note="" work="144000" start="20110503T000000Z" end="20110509T170000Z" work-start="20110503T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110503T000000Z"/>
+    </task>
+    <task id="4" name="Tarea 4" note="" work="57600" start="20110511T000000Z" end="20110512T170000Z" work-start="20110511T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110511T000000Z"/>
+    </task>
+    <task id="5" name="Tarea 5" note="" work="57600" start="20110513T000000Z" end="20110516T170000Z" work-start="20110513T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110513T000000Z"/>
+    </task>
+    <task id="6" name="Tarea 6" note="" work="57600" start="20110516T000000Z" end="20110517T170000Z" work-start="20110516T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110516T000000Z"/>
+    </task>
+    <task id="7" name="Tarea 7" note="" work="57600" start="20110517T000000Z" end="20110518T170000Z" work-start="20110517T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110517T000000Z"/>
+    </task>
+    <task id="8" name="Tarea 8" note="" work="57600" start="20110518T000000Z" end="20110519T170000Z" work-start="20110518T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110518T000000Z"/>
+    </task>
+    <task id="9" name="Tarea 9" note="" work="57600" start="20110519T000000Z" end="20110520T170000Z" work-start="20110519T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110519T000000Z"/>
+    </task>
+    <task id="10" name="Tarea 10" note="" work="57600" start="20110520T000000Z" end="20110523T170000Z" work-start="20110520T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110520T000000Z"/>
+    </task>
+    <task id="11" name="Tarea 11" note="" work="28800" start="20110521T000000Z" end="20110523T170000Z" work-start="20110523T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110521T000000Z"/>
+    </task>
+    <task id="12" name="Tarea 12" note="" work="28800" start="20110522T000000Z" end="20110523T170000Z" work-start="20110523T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110522T000000Z"/>
+    </task>
+    <task id="13" name="Tarea 13" note="" work="172800" start="20110523T000000Z" end="20110530T170000Z" work-start="20110523T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110523T000000Z"/>
+    </task>
+    <task id="14" name="Tarea 14" note="" work="28800" start="20110530T000000Z" end="20110530T170000Z" work-start="20110530T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110530T000000Z"/>
+    </task>
+    <task id="15" name="Tarea 15" note="" work="57600" start="20110530T000000Z" end="20110531T170000Z" work-start="20110530T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110530T000000Z"/>
+    </task>
+    <task id="16" name="Tarea 16" note="" work="57600" start="20110531T000000Z" end="20110601T170000Z" work-start="20110531T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110531T000000Z"/>
+    </task>
+    <task id="17" name="Tarea 17" note="" work="57600" start="20110601T000000Z" end="20110602T170000Z" work-start="20110601T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110601T000000Z"/>
+    </task>
+    <task id="18" name="Tarea 18" note="" work="57600" start="20110602T000000Z" end="20110603T170000Z" work-start="20110602T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110602T000000Z"/>
+    </task>
+    <task id="19" name="Tarea 19" note="" work="115200" start="20110603T000000Z" end="20110608T170000Z" work-start="20110603T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110603T000000Z"/>
+    </task>
+    <task id="20" name="Tarea 20" note="" work="57600" start="20110608T000000Z" end="20110609T170000Z" work-start="20110608T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110608T000000Z"/>
+    </task>
+    <task id="21" name="Tarea 21" note="" work="57600" start="20110609T000000Z" end="20110610T170000Z" work-start="20110609T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110609T000000Z"/>
+    </task>
+    <task id="22" name="Tarea 22" note="" work="28800" start="20110611T000000Z" end="20110613T170000Z" work-start="20110613T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20110611T000000Z"/>
+    </task>
+    <task id="23" name="Tarea 23" note="" work="28800" start="20110612T000000Z" end="20110613T170000Z" work-start="20110613T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="must-start-on" time="20110612T000000Z"/>
+    </task>
+    <task id="24" name="Tarea 24" note="" work="28800" start="20110612T000000Z" end="20110613T170000Z" work-start="20110613T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110612T000000Z"/>
+    </task>
+    <task id="25" name="Tarea 25" note="" work="201600" start="20110613T000000Z" end="20110621T170000Z" work-start="20110613T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110613T000000Z"/>
+    </task>
+    <task id="26" name="Tarea 26" note="" work="57600" start="20110621T000000Z" end="20110622T170000Z" work-start="20110621T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110621T000000Z"/>
+    </task>
+    <task id="27" name="Tarea 27" note="" work="57600" start="20110622T000000Z" end="20110623T170000Z" work-start="20110622T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110622T000000Z"/>
+    </task>
+    <task id="28" name="Tarea 28" note="" work="86400" start="20110623T000000Z" end="20110627T170000Z" work-start="20110623T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110623T000000Z"/>
+    </task>
+    <task id="29" name="Tarea 29" note="" work="57600" start="20110627T000000Z" end="20110628T170000Z" work-start="20110627T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110627T000000Z"/>
+    </task>
+    <task id="30" name="Tarea 30" note="" work="57600" start="20110628T000000Z" end="20110629T170000Z" work-start="20110628T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110628T000000Z"/>
+    </task>
+    <task id="31" name="Tarea 31" note="" work="172800" start="20110629T000000Z" end="20110706T170000Z" work-start="20110629T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110629T000000Z"/>
+    </task>
+    <task id="32" name="Tarea 32" note="" work="57600" start="20110706T000000Z" end="20110707T170000Z" work-start="20110706T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110706T000000Z"/>
+    </task>
+    <task id="33" name="Tarea 33" note="" work="57600" start="20110707T000000Z" end="20110708T170000Z" work-start="20110707T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110707T000000Z"/>
+    </task>
+    <task id="34" name="Tarea 34" note="" work="115200" start="20110708T000000Z" end="20110713T170000Z" work-start="20110708T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110708T000000Z"/>
+    </task>
+    <task id="35" name="Tarea 35" note="" work="550800" start="20110712T000000Z" end="20110808T090000Z" work-start="20110712T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110712T000000Z"/>
+    </task>
+    <task id="36" name="Tarea 36" note="" work="259200" start="20110808T000000Z" end="20110818T170000Z" work-start="20110808T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110808T000000Z"/>
+    </task>
+    <task id="37" name="Tarea 37" note="" work="115200" start="20110818T000000Z" end="20110823T170000Z" work-start="20110818T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110818T000000Z"/>
+    </task>
+    <task id="38" name="Tarea 38" note="" work="57600" start="20110823T000000Z" end="20110824T170000Z" work-start="20110823T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110823T000000Z"/>
+    </task>
+    <task id="39" name="Tarea 39" note="" work="57600" start="20110824T000000Z" end="20110825T170000Z" work-start="20110824T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110824T000000Z"/>
+    </task>
+    <task id="40" name="Tarea 40" note="" work="172800" start="20110826T000000Z" end="20110902T170000Z" work-start="20110826T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110826T000000Z"/>
+    </task>
+    <task id="41" name="Tarea 41" note="" work="201600" start="20110902T000000Z" end="20110912T170000Z" work-start="20110902T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110902T000000Z"/>
+    </task>
+    <task id="42" name="Tarea 42" note="" work="806400" start="20110912T000000Z" end="20111019T170000Z" work-start="20110912T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20110912T000000Z"/>
+    </task>
+    <task id="43" name="Tarea 43" note="" work="86400" start="20111019T000000Z" end="20111021T170000Z" work-start="20111019T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111019T000000Z"/>
+    </task>
+    <task id="44" name="Tarea 44" note="" work="86400" start="20111021T000000Z" end="20111025T170000Z" work-start="20111021T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111021T000000Z"/>
+    </task>
+    <task id="45" name="Tarea 45" note="" work="259200" start="20111025T000000Z" end="20111104T170000Z" work-start="20111025T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111025T000000Z"/>
+    </task>
+    <task id="46" name="Tarea 46" note="" work="28800" start="20111104T000000Z" end="20111104T170000Z" work-start="20111104T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111104T000000Z"/>
+    </task>
+    <task id="47" name="Tarea 47" note="" work="144000" start="20111104T000000Z" end="20111110T170000Z" work-start="20111104T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111104T000000Z"/>
+    </task>
+    <task id="48" name="Tarea 48" note="" work="86400" start="20111110T000000Z" end="20111114T170000Z" work-start="20111110T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111110T000000Z"/>
+    </task>
+    <task id="49" name="Tarea 49" note="" work="28800" start="20111114T000000Z" end="20111114T170000Z" work-start="20111114T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111114T000000Z"/>
+    </task>
+    <task id="50" name="Tarea 50" note="" work="144000" start="20111114T000000Z" end="20111118T170000Z" work-start="20111114T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111114T000000Z"/>
+    </task>
+    <task id="51" name="Tarea 51" note="" work="172800" start="20111118T000000Z" end="20111125T170000Z" work-start="20111118T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111118T000000Z"/>
+    </task>
+    <task id="52" name="Tarea 52" note="" work="835200" start="20111125T000000Z" end="20120104T170000Z" work-start="20111125T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20111125T000000Z"/>
+    </task>
+    <task id="53" name="Tarea 53" note="" work="316800" start="20120104T000000Z" end="20120118T170000Z" work-start="20120104T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20120104T000000Z"/>
+    </task>
+    <task id="54" name="Tarea 54" note="" work="172800" start="20120118T000000Z" end="20120125T170000Z" work-start="20120118T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20120118T000000Z"/>
+    </task>
+    <task id="55" name="Tarea 55" note="" work="115200" start="20120125T000000Z" end="20120130T170000Z" work-start="20120125T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20120125T000000Z"/>
+    </task>
+    <task id="56" name="Tarea 56" note="" work="57600" start="20120130T000000Z" end="20120131T170000Z" work-start="20120130T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20120130T000000Z"/>
+    </task>
+    <task id="57" name="Tarea 57" note="" work="115200" start="20120131T000000Z" end="20120203T170000Z" work-start="20120131T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20120131T000000Z"/>
+    </task>
+    <task id="58" name="Tarea 58" note="" work="86400" start="20120203T000000Z" end="20120207T170000Z" work-start="20120203T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20120203T000000Z"/>
+    </task>
+    <task id="59" name="Tarea 59" note="" work="172800" start="20120207T000000Z" end="20120214T170000Z" work-start="20120207T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20120207T000000Z"/>
+    </task>
+    <task id="60" name="Tarea 60" note="" work="172800" start="20120214T000000Z" end="20120221T170000Z" work-start="20120214T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20120214T000000Z"/>
+    </task>
+    <task id="61" name="Tarea 61" note="" work="57600" start="20120221T000000Z" end="20120222T170000Z" work-start="20120221T080000Z" percent-complete="100" priority="0" type="normal" scheduling="fixed-work">
+      <constraint type="start-no-earlier-than" time="20120221T000000Z"/>
+    </task>
+  </tasks>
+  <resource-groups/>
+  <resources/>
+  <allocations/>
+</project>

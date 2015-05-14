@@ -1,0 +1,89 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Método observador (Camino Hamiltoniano)}
+\PY{c+cm}{ * Un grafo dirigido tendrá un camino Hamiltoniano }
+\PY{c+cm}{ * (será grafo hamiltoniano) si existe un vértice que partiendo desde él }
+\PY{c+cm}{ * se pase por cada vértice restante del grafo, una sola vez por nodo, y }
+\PY{c+cm}{ * volviendo exactamente al nodo de partida.}
+\PY{c+cm}{ * @param G: matriz bidimensional de enteros que representa al grafo}
+\PY{c+cm}{ * de trabajo.}
+\PY{c+cm}{ * @param v: valor entero que representa el nodo de partida para el }
+\PY{c+cm}{ * camino.}
+\PY{c+cm}{ * @param w: valor entero que representa el nodo anterior visitado.}
+\PY{c+cm}{ */}
+
+\PY{k+kd}{public} \PY{k+kt}{void} \PY{n+nf}{algo\PYZus{}Hamilton}\PY{o}{(}\PY{k+kt}{int} \PY{o}{[}\PY{o}{]}\PY{o}{[}\PY{o}{]} \PY{n}{G}\PY{o}{,} \PY{k+kt}{int} \PY{n}{v}\PY{o}{,} \PY{k+kt}{int} \PY{n}{w}\PY{o}{)}
+\PY{o}{\PYZob{}}
+    \PY{k+kt}{int} \PY{n}{tam\PYZus{}G} \PY{o}{=} \PY{n}{G}\PY{o}{.}\PY{n+na}{length}\PY{o}{;}
+    \PY{n}{visitado\PYZus{}hamilton} \PY{o}{=} \PY{k}{new} \PY{k+kt}{boolean}\PY{o}{[}\PY{n}{tam\PYZus{}G}\PY{o}{]}\PY{o}{;}
+    \PY{n}{Arrays}\PY{o}{.}\PY{n+na}{fill}\PY{o}{(}\PY{n}{visitado\PYZus{}hamilton}\PY{o}{,}\PY{k+kc}{false}\PY{o}{)}\PY{o}{;}
+    \PY{n}{pila\PYZus{}hamilton} \PY{o}{=} \PY{k}{new} \PY{n}{Stack}\PY{o}{<}\PY{n}{Integer}\PY{o}{>}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+    \PY{n}{origen\PYZus{}hamilton} \PY{o}{=} \PY{n}{v}\PY{o}{;}
+
+    \PY{k+kt}{boolean} \PY{n}{encontrado} \PY{o}{=} \PY{n}{algo\PYZus{}HamiltonRec}\PY{o}{(}\PY{n}{v}\PY{o}{,}\PY{n}{w}\PY{o}{,}\PY{n}{G}\PY{o}{,}\PY{n}{tam\PYZus{}G}\PY{o}{)}\PY{o}{;}
+
+    \PY{k}{if}\PY{o}{(}\PY{n}{encontrado}\PY{o}{)}
+	\PY{o}{\PYZob{}}
+	    \PY{n}{Stack}\PY{o}{<}\PY{n}{Integer}\PY{o}{>} \PY{n}{salida\PYZus{}hamilton} \PY{o}{=} \PY{k}{new} \PY{n}{Stack}\PY{o}{<}\PY{n}{Integer}\PY{o}{>}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+		
+	    \PY{k}{while}\PY{o}{(}\PY{o}{!}\PY{n}{pila\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{empty}\PY{o}{(}\PY{o}{)}\PY{o}{)}
+		\PY{o}{\PYZob{}}
+		    \PY{n}{salida\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{push}\PY{o}{(}\PY{n}{pila\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{peek}\PY{o}{(}\PY{o}{)}\PY{o}{)}\PY{o}{;}
+		    \PY{n}{pila\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{pop}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+		\PY{o}{\PYZcb{}}
+
+	    \PY{n}{System}\PY{o}{.}\PY{n+na}{out}\PY{o}{.}\PY{n+na}{print}\PY{o}{(}\PY{l+s}{"("}\PY{o}{)}\PY{o}{;}
+	    \PY{k}{while}\PY{o}{(}\PY{o}{!}\PY{n}{salida\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{empty}\PY{o}{(}\PY{o}{)}\PY{o}{)}
+		\PY{o}{\PYZob{}}
+		    \PY{n}{System}\PY{o}{.}\PY{n+na}{out}\PY{o}{.}\PY{n+na}{print}\PY{o}{(}\PY{l+s}{" "}\PY{o}{+}\PY{n}{salida\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{peek}\PY{o}{(}\PY{o}{)}\PY{o}{)}\PY{o}{;}
+		    \PY{n}{salida\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{pop}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+		\PY{o}{\PYZcb{}}
+	    \PY{n}{System}\PY{o}{.}\PY{n+na}{out}\PY{o}{.}\PY{n+na}{println}\PY{o}{(}\PY{l+s}{" )"}\PY{o}{)}\PY{o}{;}
+	
+	\PY{o}{\PYZcb{}}
+    \PY{k}{else}
+	\PY{n}{System}\PY{o}{.}\PY{n+na}{out}\PY{o}{.}\PY{n+na}{println}\PY{o}{(}\PY{l+s}{"No hay camino hamiltoniano para el grafo"}\PY{o}{)}\PY{o}{;}
+\PY{o}{\PYZcb{}}
+
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Método observador. (privado)}
+\PY{c+cm}{ * Método que realiza el cálculo recursivo sobre los nodos necesarios}
+\PY{c+cm}{ * del grafo.}
+\PY{c+cm}{ * @param v: valor entero que representa el nodo actual. }
+\PY{c+cm}{ * @param w: valor entero que representa el nodo anterior procesado.}
+\PY{c+cm}{ * @param G: matriz bidimensional de enteros que representa el grafo de }
+\PY{c+cm}{ * trabajo actual.}
+\PY{c+cm}{ * @param d: valor entero que representa el número de nodos del grafo.}
+\PY{c+cm}{ */}
+
+\PY{k+kd}{private} \PY{k+kt}{boolean} \PY{n+nf}{algo\PYZus{}HamiltonRec}\PY{o}{(}\PY{k+kt}{int} \PY{n}{v}\PY{o}{,} \PY{k+kt}{int} \PY{n}{w}\PY{o}{,} \PY{k+kt}{int} \PY{o}{[}\PY{o}{]}\PY{o}{[}\PY{o}{]} \PY{n}{G}\PY{o}{,} \PY{k+kt}{int} \PY{n}{d}\PY{o}{)}
+\PY{o}{\PYZob{}}
+    \PY{k+kt}{int} \PY{n}{auxiliar} \PY{o}{=} \PY{l+m+mi}{0}\PY{o}{;}
+
+    \PY{n}{visitado\PYZus{}hamilton}\PY{o}{[}\PY{n}{v}\PY{o}{]} \PY{o}{=} \PY{k+kc}{true}\PY{o}{;}
+    \PY{n}{pila\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{push}\PY{o}{(}\PY{n}{v}\PY{o}{)}\PY{o}{;} 
+    \PY{c+c1}{//Tengo esta pila para luego rehacer el recorrido.}
+
+    \PY{k}{for}\PY{o}{(}\PY{k+kt}{int} \PY{n}{j}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;} \PY{n}{j} \PY{o}{<} \PY{n}{visitado\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{length}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{j}\PY{o}{)}
+	\PY{k}{if}\PY{o}{(}\PY{n}{visitado\PYZus{}hamilton}\PY{o}{[}\PY{n}{j}\PY{o}{]}\PY{o}{)}
+	    \PY{n}{auxiliar}\PY{o}{+}\PY{o}{+}\PY{o}{;}
+
+    \PY{k}{if}\PY{o}{(}\PY{n}{auxiliar} \PY{o}{=}\PY{o}{=} \PY{n}{visitado\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{length}\PY{o}{)}
+	\PY{k}{if}\PY{o}{(}\PY{n}{G}\PY{o}{[}\PY{n}{v}\PY{o}{]}\PY{o}{[}\PY{n}{origen\PYZus{}hamilton}\PY{o}{]} \PY{o}{=}\PY{o}{=} \PY{l+m+mi}{1} \PY{o}{&}\PY{o}{&} \PY{n}{d}\PY{o}{-}\PY{l+m+mi}{1} \PY{o}{=}\PY{o}{=} \PY{l+m+mi}{0}\PY{o}{)}
+	    \PY{o}{\PYZob{}}
+		\PY{n}{pila\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{push}\PY{o}{(}\PY{n}{origen\PYZus{}hamilton}\PY{o}{)}\PY{o}{;}
+		\PY{k}{return} \PY{k+kc}{true}\PY{o}{;}
+	    \PY{o}{\PYZcb{}}
+
+
+
+    \PY{k}{for}\PY{o}{(}\PY{k+kt}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{o}{;} \PY{n}{i} \PY{o}{<} \PY{n}{G}\PY{o}{.}\PY{n+na}{length}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{o}{)}
+	\PY{k}{if}\PY{o}{(}\PY{n}{G}\PY{o}{[}\PY{n}{v}\PY{o}{]}\PY{o}{[}\PY{n}{i}\PY{o}{]} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{0} \PY{o}{&}\PY{o}{&} \PY{o}{!}\PY{n}{visitado\PYZus{}hamilton}\PY{o}{[}\PY{n}{i}\PY{o}{]}\PY{o}{)}
+	    \PY{k}{if}\PY{o}{(}\PY{n}{algo\PYZus{}HamiltonRec}\PY{o}{(}\PY{n}{i}\PY{o}{,}\PY{n}{v}\PY{o}{,}\PY{n}{G}\PY{o}{,}\PY{n}{d}\PY{o}{-}\PY{l+m+mi}{1}\PY{o}{)}\PY{o}{)}
+		\PY{k}{return} \PY{k+kc}{true}\PY{o}{;}
+
+    \PY{n}{pila\PYZus{}hamilton}\PY{o}{.}\PY{n+na}{pop}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+    \PY{n}{visitado\PYZus{}hamilton}\PY{o}{[}\PY{n}{v}\PY{o}{]} \PY{o}{=} \PY{k+kc}{false}\PY{o}{;}
+    \PY{k}{return} \PY{k+kc}{false}\PY{o}{;}
+\PY{o}{\PYZcb{}}
+\end{Verbatim}

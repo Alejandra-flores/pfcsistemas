@@ -1,0 +1,74 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Método observador (Número cromático del grafo)}
+\PY{c+cm}{ * @param G: matriz bidimensional de enteros que representa al grafo de}
+\PY{c+cm}{ * trabajo actual.}
+\PY{c+cm}{ * @return int que es el número cromático del grafo.}
+\PY{c+cm}{ */}
+
+\PY{k+kd}{public} \PY{k+kt}{int} \PY{n+nf}{k\PYZus{}colores}\PY{o}{(}\PY{k+kt}{int} \PY{o}{[}\PY{o}{]}\PY{o}{[}\PY{o}{]} \PY{n}{G}\PY{o}{)}
+\PY{o}{\PYZob{}}
+    \PY{k+kt}{int} \PY{n}{tama\PYZus{}G} \PY{o}{=} \PY{n}{G}\PY{o}{.}\PY{n+na}{length}\PY{o}{;}
+    \PY{k+kt}{int} \PY{n}{elto}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{,} \PY{n}{original}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;}
+    \PY{k+kt}{int} \PY{o}{[}\PY{o}{]} \PY{n}{color} \PY{o}{=} \PY{k}{new} \PY{k+kt}{int} \PY{o}{[}\PY{n}{tama\PYZus{}G}\PY{o}{]}\PY{o}{;}
+    \PY{n}{Arrays}\PY{o}{.}\PY{n+na}{fill}\PY{o}{(}\PY{n}{color}\PY{o}{,}\PY{l+m+mi}{0}\PY{o}{)}\PY{o}{;} \PY{c+c1}{//Rellenamos con el color vacío todo el vector.}
+    \PY{k+kt}{int} \PY{n}{i}\PY{o}{;}
+    \PY{k+kt}{boolean} \PY{n}{salto}\PY{o}{=}\PY{k+kc}{false}\PY{o}{;}
+
+
+    \PY{n}{HashMap}\PY{o}{<}\PY{n}{Integer}\PY{o}{,}\PY{n}{ArrayList}\PY{o}{<}\PY{n}{Integer}\PY{o}{>}\PY{o}{>}  \PY{n}{v\PYZus{}ady} 
+	\PY{o}{=} \PY{k}{new} \PY{n}{HashMap}\PY{o}{<}\PY{n}{Integer}\PY{o}{,}\PY{n}{ArrayList}\PY{o}{<}\PY{n}{Integer}\PY{o}{>}\PY{o}{>}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+    \PY{n}{ArrayList}\PY{o}{<}\PY{n}{Integer}\PY{o}{>} \PY{n}{ady}\PY{o}{;}
+
+
+    \PY{k}{for}\PY{o}{(}\PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;} \PY{n}{i} \PY{o}{<} \PY{n}{tama\PYZus{}G}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{o}{)}
+	\PY{o}{\PYZob{}}
+	    \PY{n}{ady} \PY{o}{=} \PY{k}{new} \PY{n}{ArrayList}\PY{o}{<}\PY{n}{Integer}\PY{o}{>}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+
+	    \PY{k}{for}\PY{o}{(}\PY{k+kt}{int} \PY{n}{j}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;} \PY{n}{j} \PY{o}{<} \PY{n}{tama\PYZus{}G}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{j}\PY{o}{)}
+		\PY{o}{\PYZob{}}
+		    \PY{k}{if}\PY{o}{(}\PY{n}{G}\PY{o}{[}\PY{n}{i}\PY{o}{]}\PY{o}{[}\PY{n}{j}\PY{o}{]} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{0}\PY{o}{)}
+			\PY{o}{\PYZob{}}
+			    \PY{n}{ady}\PY{o}{.}\PY{n+na}{add}\PY{o}{(}\PY{n}{j}\PY{o}{)}\PY{o}{;}
+			\PY{o}{\PYZcb{}}
+		\PY{o}{\PYZcb{}}
+
+	    \PY{n}{v\PYZus{}ady}\PY{o}{.}\PY{n+na}{put}\PY{o}{(}\PY{n}{i}\PY{o}{,}\PY{n}{ady}\PY{o}{)}\PY{o}{;}
+	\PY{o}{\PYZcb{}}
+
+    \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;}
+    \PY{k+kt}{int} \PY{n}{z}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;}
+    \PY{k}{while}\PY{o}{(}\PY{n}{i} \PY{o}{<} \PY{n}{tama\PYZus{}G}\PY{o}{)}
+	\PY{o}{\PYZob{}}
+	    \PY{n}{z} \PY{o}{=} \PY{n}{rec\PYZus{}depth}\PY{o}{.}\PY{n+na}{get}\PY{o}{(}\PY{n}{i}\PY{o}{)}\PY{o}{;}
+	    \PY{n}{color}\PY{o}{[}\PY{n}{z}\PY{o}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}\PY{o}{;}
+	    \PY{n}{original} \PY{o}{=} \PY{n}{color}\PY{o}{[}\PY{n}{z}\PY{o}{]}\PY{o}{;}
+
+	    \PY{k}{for}\PY{o}{(}\PY{k+kt}{int} \PY{n}{j}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;} \PY{n}{j} \PY{o}{<} \PY{n}{v\PYZus{}ady}\PY{o}{.}\PY{n+na}{get}\PY{o}{(}\PY{n}{z}\PY{o}{)}\PY{o}{.}\PY{n+na}{size}\PY{o}{(}\PY{o}{)} \PY{o}{&}\PY{o}{&} \PY{o}{!}\PY{n}{salto}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{j}\PY{o}{)}
+		\PY{o}{\PYZob{}}
+		    \PY{n}{elto} \PY{o}{=} \PY{n}{v\PYZus{}ady}\PY{o}{.}\PY{n+na}{get}\PY{o}{(}\PY{n}{z}\PY{o}{)}\PY{o}{.}\PY{n+na}{get}\PY{o}{(}\PY{n}{j}\PY{o}{)}\PY{o}{;}
+		    \PY{k}{if}\PY{o}{(}\PY{n}{color}\PY{o}{[}\PY{n}{elto}\PY{o}{]} \PY{o}{=}\PY{o}{=} \PY{n}{color}\PY{o}{[}\PY{n}{z}\PY{o}{]}\PY{o}{)}
+			\PY{o}{\PYZob{}}
+			    \PY{n}{color}\PY{o}{[}\PY{n}{z}\PY{o}{]} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}\PY{o}{;}
+			    \PY{n}{salto} \PY{o}{=} \PY{k+kc}{true}\PY{o}{;}
+			\PY{o}{\PYZcb{}}
+		\PY{o}{\PYZcb{}}
+
+       
+	    \PY{k}{if}\PY{o}{(}\PY{n}{original} \PY{o}{=}\PY{o}{=} \PY{n}{color}\PY{o}{[}\PY{n}{z}\PY{o}{]}\PY{o}{)}
+		\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{o}{;}
+	    \PY{k}{else}
+		\PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;}
+	\PY{o}{\PYZcb{}} 
+
+    \PY{n}{elto} \PY{o}{=} \PY{n}{color}\PY{o}{[}\PY{l+m+mi}{0}\PY{o}{]}\PY{o}{;}
+	
+    \PY{k}{for}\PY{o}{(}\PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;} \PY{n}{i} \PY{o}{<} \PY{n}{tama\PYZus{}G}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{o}{)}
+	\PY{k}{if}\PY{o}{(}\PY{n}{color}\PY{o}{[}\PY{n}{i}\PY{o}{]} \PY{o}{>} \PY{n}{elto}\PY{o}{)}
+	    \PY{n}{elto} \PY{o}{=} \PY{n}{color}\PY{o}{[}\PY{n}{i}\PY{o}{]}\PY{o}{;}
+
+    \PY{k}{return} \PY{n}{elto}\PY{o}{;}
+
+	
+\PY{o}{\PYZcb{}}
+\end{Verbatim}

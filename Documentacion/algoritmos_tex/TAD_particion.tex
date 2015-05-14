@@ -1,0 +1,101 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kd}{public} \PY{k+kd}{class} \PY{n+nc}{Particion}
+\PY{o}{\PYZob{}}
+
+    \PY{c+cm}{/**}
+\PY{c+cm}{     * Atributos privados}
+\PY{c+cm}{     */}
+
+    \PY{c+cm}{/*}
+\PY{c+cm}{      Array de enteros que contiene los padres}
+\PY{c+cm}{      de las posiciones (nodos) del sistema.}
+\PY{c+cm}{    */}
+
+    \PY{k+kd}{private} \PY{k+kt}{int} \PY{o}{[}\PY{o}{]} \PY{n}{padre}\PY{o}{;}
+
+    \PY{c+cm}{/*}
+\PY{c+cm}{      Valor entero que cuyo contenido es}
+\PY{c+cm}{      el número de nodos que posee el grafo.}
+\PY{c+cm}{    */}
+
+    \PY{k+kd}{private} \PY{k+kt}{int} \PY{n}{nEltos}\PY{o}{;}
+
+    \PY{c+cm}{/**}
+\PY{c+cm}{     * Constructor nulo.}
+\PY{c+cm}{     */}
+
+    \PY{k+kd}{public} \PY{n+nf}{Particion}\PY{o}{(}\PY{o}{)} \PY{o}{\PYZob{}}\PY{o}{\PYZcb{}}
+
+    \PY{c+cm}{/**}
+\PY{c+cm}{     * Constructor predeterminado.}
+\PY{c+cm}{     * Se implementa un bosque de árboles (con control de altura). }
+\PY{c+cm}{     * Compresión de caminos.}
+\PY{c+cm}{     * @param n número de elementos de la partición que se crea}
+\PY{c+cm}{     */}
+
+    \PY{k+kd}{public} \PY{n+nf}{Particion}\PY{o}{(}\PY{k+kt}{int} \PY{n}{n}\PY{o}{)}
+    \PY{o}{\PYZob{}}
+	\PY{n}{padre} \PY{o}{=} \PY{k}{new} \PY{k+kt}{int}\PY{o}{[}\PY{n}{n}\PY{o}{]}\PY{o}{;}
+	\PY{n}{nEltos} \PY{o}{=} \PY{n}{n}\PY{o}{;}
+
+	\PY{n}{Arrays}\PY{o}{.}\PY{n+na}{fill}\PY{o}{(}\PY{n}{padre}\PY{o}{,}\PY{l+m+mi}{0}\PY{o}{,}\PY{n}{nEltos}\PY{o}{,}\PY{o}{-}\PY{l+m+mi}{1}\PY{o}{)}\PY{o}{;}
+	\PY{c+c1}{//Creamos n árboles de altura 0 representada con -1}
+    \PY{o}{\PYZcb{}}
+
+    \PY{c+cm}{/**}
+\PY{c+cm}{     * Método modificador.}
+\PY{c+cm}{     * Une el subconjunto del elemento a y el del elemento b en uno }
+\PY{c+cm}{     * de los subconjuntos arbitrariamente. La partición P queda }
+\PY{c+cm}{     * con un miembro menos.}
+\PY{c+cm}{     * @param a representante de la clase de partición (nodo).}
+\PY{c+cm}{     * @param b representante de la clase de partición (nodo).}
+\PY{c+cm}{     * @return void}
+\PY{c+cm}{     */}
+    
+    \PY{k+kd}{public} \PY{k+kt}{void} \PY{n+nf}{Union}\PY{o}{(}\PY{k+kt}{int} \PY{n}{a}\PY{o}{,} \PY{k+kt}{int} \PY{n}{b}\PY{o}{)}
+    \PY{o}{\PYZob{}}
+	\PY{k}{if}\PY{o}{(}\PY{n}{padre}\PY{o}{[}\PY{n}{b}\PY{o}{]} \PY{o}{<} \PY{n}{padre}\PY{o}{[}\PY{n}{a}\PY{o}{]}\PY{o}{)}
+	    \PY{n}{padre}\PY{o}{[}\PY{n}{a}\PY{o}{]} \PY{o}{=} \PY{n}{b}\PY{o}{;}
+	\PY{k}{else}
+	    \PY{o}{\PYZob{}}
+	 	\PY{k}{if}\PY{o}{(}\PY{n}{padre}\PY{o}{[}\PY{n}{a}\PY{o}{]} \PY{o}{=}\PY{o}{=} \PY{n}{padre}\PY{o}{[}\PY{n}{b}\PY{o}{]}\PY{o}{)}
+	 	    \PY{n}{padre}\PY{o}{[}\PY{n}{a}\PY{o}{]}\PY{o}{-}\PY{o}{-}\PY{o}{;}
+
+	 	\PY{n}{padre}\PY{o}{[}\PY{n}{b}\PY{o}{]} \PY{o}{=} \PY{n}{a}\PY{o}{;}
+	    \PY{o}{\PYZcb{}}
+    \PY{o}{\PYZcb{}}
+
+    \PY{c+cm}{/**}
+\PY{c+cm}{     * Método observador.}
+\PY{c+cm}{     * Devuelve el representante del subconjunto al que }
+\PY{c+cm}{     * pertenece el elemento x.}
+\PY{c+cm}{     * @param x elemento de la partición.}
+\PY{c+cm}{     * @return devuelve el representante del subconjunto }
+\PY{c+cm}{     * al que pertenece el elemento x.}
+\PY{c+cm}{     */}
+
+    \PY{k+kd}{public} \PY{k+kt}{int} \PY{n+nf}{Encontrar}\PY{o}{(}\PY{k+kt}{int} \PY{n}{x}\PY{o}{)}
+    \PY{o}{\PYZob{}}
+	\PY{k+kt}{int} \PY{n}{raiz}\PY{o}{,}\PY{n}{y}\PY{o}{;}
+
+	\PY{n}{raiz} \PY{o}{=} \PY{n}{x}\PY{o}{;}
+
+	\PY{k}{while}\PY{o}{(}\PY{n}{padre}\PY{o}{[}\PY{n}{raiz}\PY{o}{]} \PY{o}{>} \PY{o}{-}\PY{l+m+mi}{1}\PY{o}{)}
+	    \PY{n}{raiz} \PY{o}{=} \PY{n}{padre}\PY{o}{[}\PY{n}{raiz}\PY{o}{]}\PY{o}{;}
+
+	\PY{c+cm}{/* Los nodos del camino de x a raiz se hacen }
+\PY{c+cm}{	   hijo de raiz. */}
+	
+	\PY{k}{while}\PY{o}{(}\PY{n}{padre}\PY{o}{[}\PY{n}{x}\PY{o}{]} \PY{o}{>}\PY{o}{=} \PY{n}{raiz}\PY{o}{)}
+	    \PY{o}{\PYZob{}}
+	 	\PY{n}{y} \PY{o}{=} \PY{n}{padre}\PY{o}{[}\PY{n}{x}\PY{o}{]}\PY{o}{;}
+	 	\PY{n}{padre}\PY{o}{[}\PY{n}{x}\PY{o}{]} \PY{o}{=} \PY{n}{raiz}\PY{o}{;}
+	 	\PY{n}{x} \PY{o}{=} \PY{n}{y}\PY{o}{;}
+	    \PY{o}{\PYZcb{}}
+
+	\PY{k}{return} \PY{n}{raiz}\PY{o}{;}
+    \PY{o}{\PYZcb{}}
+
+    
+\PY{o}{\PYZcb{}}
+\end{Verbatim}

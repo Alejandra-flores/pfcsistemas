@@ -1,0 +1,70 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Método observador (Euler dirigido)}
+\PY{c+cm}{ * Método que llama al procedimiento general para la obtención del camino}
+\PY{c+cm}{ * euleriano (si existe) del grafo euleriano (si lo es).}
+\PY{c+cm}{ * @param G: matriz bidimensional de enteros cuyo contenido es el grafo}
+\PY{c+cm}{ * de trabajo actual.}
+\PY{c+cm}{ * @param v: valor entero que representa el nodo origen para el camino}
+\PY{c+cm}{ * euleriano.}
+\PY{c+cm}{ * @param w: valor entero que representa el nodo anterior procesado }
+\PY{c+cm}{ * (en la primera llamada será el mismo nodo que v).}
+\PY{c+cm}{ * @return boolean: devuelve true o fale si hay encontrado o no un }
+\PY{c+cm}{ * camino euleriano para el grafo.}
+\PY{c+cm}{ */}
+    
+\PY{k+kd}{public} \PY{k+kt}{boolean} \PY{n+nf}{camino\PYZus{}eulerGD}\PY{o}{(}\PY{k+kt}{int} \PY{o}{[}\PY{o}{]}\PY{o}{[}\PY{o}{]} \PY{n}{G}\PY{o}{,} \PY{k+kt}{int} \PY{n}{v}\PY{o}{,} \PY{k+kt}{int} \PY{n}{w}\PY{o}{)}
+\PY{o}{\PYZob{}}
+    \PY{n}{vert\PYZus{}orig\PYZus{}euler} \PY{o}{=} \PY{n}{w}\PY{o}{;}
+    \PY{n}{algo\PYZus{}EulerGD}\PY{o}{(}\PY{n}{G}\PY{o}{,}\PY{n}{v}\PY{o}{,}\PY{n}{w}\PY{o}{)}\PY{o}{;}
+	
+
+    \PY{k}{return} \PY{n}{encontrado\PYZus{}euler}\PY{o}{;}
+\PY{o}{\PYZcb{}}
+
+
+\PY{c+cm}{/**}
+\PY{c+cm}{ * Método modificador (Algoritmo Euler para grafos dirigidos)}
+\PY{c+cm}{ * Un camino euleriano: un camino partiendo de un nodo origen que}
+\PY{c+cm}{ * pase por todos los vértices (se pueden repetir) empleando todas}
+\PY{c+cm}{ * las aristas posibles y regresando al nodo origen (ciclo).}
+\PY{c+cm}{ * @param G: matriz bidimensional de enteros cuyo contenido es el grafo}
+\PY{c+cm}{ * de trabajo actual.}
+\PY{c+cm}{ * @param v: valor entero que representa el nodo origen para el camino}
+\PY{c+cm}{ * euleriano.}
+\PY{c+cm}{ * @param w: valor entero que representa el nodo anterior procesado }
+\PY{c+cm}{ * (en la primera llamada será el mismo nodo que v).}
+\PY{c+cm}{ */}
+
+\PY{k+kd}{private} \PY{k+kt}{void} \PY{n+nf}{algo\PYZus{}EulerGD}\PY{o}{(}\PY{k+kt}{int} \PY{o}{[}\PY{o}{]}\PY{o}{[}\PY{o}{]} \PY{n}{G}\PY{o}{,} \PY{k+kt}{int} \PY{n}{v}\PY{o}{,} \PY{k+kt}{int} \PY{n}{w}\PY{o}{)}
+\PY{o}{\PYZob{}}
+    \PY{n}{grado\PYZus{}vector}\PY{o}{(}\PY{n}{G}\PY{o}{)}\PY{o}{;}
+    \PY{k+kt}{int} \PY{n}{tama\PYZus{}G} \PY{o}{=} \PY{n}{G}\PY{o}{.}\PY{n+na}{length}\PY{o}{;}
+    \PY{k+kt}{int} \PY{n}{t} \PY{o}{=} \PY{n}{grado\PYZus{}euler}\PY{o}{[}\PY{n}{v}\PY{o}{]} \PY{o}{+} \PY{n}{grado\PYZus{}euler}\PY{o}{[}\PY{n}{w}\PY{o}{]}\PY{o}{;}
+    \PY{n}{dirigido\PYZus{}euler} \PY{o}{=} \PY{k+kc}{true}\PY{o}{;}
+
+    \PY{n}{v\PYZus{}euler} \PY{o}{=} \PY{n}{v}\PY{o}{;}
+    \PY{n}{pila\PYZus{}euler} \PY{o}{=} \PY{k}{new} \PY{n}{Stack}\PY{o}{<}\PY{n}{Integer}\PY{o}{>}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+    \PY{n}{hash\PYZus{}euler} \PY{o}{=} \PY{k}{new} \PY{n}{HashMap}\PY{o}{<}\PY{n}{Integer}\PY{o}{,}\PY{n}{ArrayList}\PY{o}{<}\PY{n}{Integer}\PY{o}{>}\PY{o}{>}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+    \PY{n}{ArrayList}\PY{o}{<}\PY{n}{Integer}\PY{o}{>} \PY{n}{adyacencias}\PY{o}{;}
+
+    \PY{k}{for}\PY{o}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;} \PY{n}{i} \PY{o}{<} \PY{n}{tama\PYZus{}G}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{o}{)}
+	\PY{o}{\PYZob{}}
+	    \PY{n}{adyacencias} \PY{o}{=} \PY{k}{new} \PY{n}{ArrayList}\PY{o}{<}\PY{n}{Integer}\PY{o}{>}\PY{o}{(}\PY{o}{)}\PY{o}{;}
+
+	    \PY{k}{for}\PY{o}{(}\PY{k+kt}{int} \PY{n}{j}\PY{o}{=}\PY{l+m+mi}{0}\PY{o}{;} \PY{n}{j} \PY{o}{<} \PY{n}{tama\PYZus{}G}\PY{o}{;} \PY{o}{+}\PY{o}{+}\PY{n}{j}\PY{o}{)}
+		\PY{o}{\PYZob{}}
+		    \PY{k}{if}\PY{o}{(}\PY{n}{G}\PY{o}{[}\PY{n}{i}\PY{o}{]}\PY{o}{[}\PY{n}{j}\PY{o}{]} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{0}\PY{o}{)}
+			\PY{o}{\PYZob{}}
+
+			    \PY{n}{adyacencias}\PY{o}{.}\PY{n+na}{add}\PY{o}{(}\PY{n}{j}\PY{o}{)}\PY{o}{;}
+			\PY{o}{\PYZcb{}}
+		\PY{o}{\PYZcb{}}
+
+	    \PY{n}{hash\PYZus{}euler}\PY{o}{.}\PY{n+na}{put}\PY{o}{(}\PY{n}{i}\PY{o}{,}\PY{n}{adyacencias}\PY{o}{)}\PY{o}{;}
+	\PY{o}{\PYZcb{}}
+
+    \PY{n}{encontrado\PYZus{}euler} \PY{o}{=} \PY{n}{entrada\PYZus{}salida\PYZus{}euler}\PY{o}{(}\PY{n}{G}\PY{o}{.}\PY{n+na}{length}\PY{o}{)}\PY{o}{;}
+
+\PY{o}{\PYZcb{}}
+\end{Verbatim}

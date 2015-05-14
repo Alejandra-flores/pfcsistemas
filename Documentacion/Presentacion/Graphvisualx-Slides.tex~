@@ -1,0 +1,307 @@
+\documentclass[xcolor=x11names,compress]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage[version=0.96]{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,matrix,shapes,snakes,automata,backgrounds,petri}
+\tikzstyle{information text}=[rounded corners, fill=gris]
+
+\newcommand{\figuratikz}[3]
+{
+\begin{center}%
+\begin{figure}[H]%
+\begin{minipage}[H]{#1\columnwidth}%
+\centering%
+\begin{tikzpicture}{node distance=1.3cm,>=stealth',bend angle=45, auto}
+{#3}
+\end{tikzpicture}
+\caption{#2}%
+\end{minipage}%
+\end{figure}%
+\end{center}%
+}
+
+\definecolor{shadecolor}{RGB}{243,243,243}
+
+\newtheoremstyle{cuadrado}% name
+  {3pt}%      Space above
+  {3pt}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\itshape}% Thm head font
+  {}%        Punctuation after thm head
+  {0em}%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+\theoremstyle{cuadrado}
+\newtheorem*{teo}{}
+
+
+\newcommand{\slidesettitulo}{\textcolor{black}{Suite informática de teoría algorítmica de grafos Graphvisualx}}
+\newcommand{\shorttitulo}{Graphvisualx}
+\newcommand{\authornombre}{Moisés Gautier Gómez}
+\newcommand{\email}{\includegraphics[width=3.5cm]{image.png}}
+\newcommand{\web}{graphvisualx.wordpress.com}
+\newcommand{\institucion}{Universidad de Cádiz  \\ Escuela Superior de Ingeniería}
+\newenvironment{fondo}{\begin{teo}}{\end{teo}}
+
+
+
+\definecolor{darkgray}{RGB}{237,236,236}
+\definecolor{azuladwys}{RGB}{157,189,219}
+\definecolor{azuladwys_version}{RGB}{174,208,239}
+\definecolor{plata}{RGB}{145,143,144}
+
+
+\usetheme{Ilmenau}
+
+\setbeamertemplate{footline}{
+\begin{tiny}
+\setbeamercolor{foot1}{fg=black!70,bg=gray!10}
+\setbeamercolor{foot2}{fg=gray,bg=gray!15}
+\setbeamercolor{foot3}{fg=gray,bg=gray!10}
+\setbeamercolor{foot4}{fg=black!70,bg=gray!20}
+\setbeamercolor{foot5}{fg=gray,bg=gray!15}
+\setbeamercolor{foot6}{fg=black,bg=gray!20}
+
+%\setbeamercolor{foot1}{fg=azuladwys_version,bg=azuladwys_version}
+%\setbeamercolor{foot2}{fg=azuladwys,bg=azuladwys}
+%\setbeamercolor{foot3}{fg=azuladwys_version,bg=azuladwys_version}
+%\setbeamercolor{foot4}{fg=azuladwys,bg=azuladwys}
+%\setbeamercolor{foot5}{fg=azuladwys,bg=azuladwys}
+%\setbeamercolor{foot6}{fg=black,bg=gray!20}
+
+% taken from theme infolines and adapted
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,center]{foot1}%
+  %\fontsize{5}{5}\selectfont
+  \shorttitulo
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{foot2}
+  \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.05\paperwidth,ht=2.25ex,dp=1ex,center]{foot3}
+  \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{foot4}%
+  %\fontsize{5}{5}\selectfont
+  \web
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.05\paperwidth,ht=2.25ex,dp=1ex,center]{foot5}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{foot6}%
+	\insertframenumber{} / \inserttotalframenumber \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+\end{tiny}
+\vskip10pt
+}
+
+
+%\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{} %Elimina los iconos que permiten la navegación en el documento
+
+\usecolortheme[named=darkgray]{structure}
+\usefonttheme{professionalfonts}
+\useoutertheme{miniframes}
+
+\title{\slidesettitulo}
+\author{\authornombre \\ \email}
+\institute{\institucion}
+\date{\today}
+\setcounter{subsection}{0}
+
+\begin{document}
+\scriptsize{
+\frame{\titlepage
+
+
+}
+
+\section{Presentación}
+
+\subsection{Introducción}
+
+\frame{\frametitle{\textcolor{black}{Todo tiene un comienzo}}
+
+La teoría de grafos, es una rama importante de las matemáticas combinatorias que se ha estudiado intensamente durante cientos de años. Muchas propiedades importantes y útiles de los grafos se han demostrado, sin embargo, otros muchos problemas de mucha complejidad (problemas de complejidad NP o irresolubles en tiempo polinómico) siguen sin resolverse.\newline
+
+La investigación sobre teoría algorítmica de grafos es relativamente reciente. Aunque algunos de los algoritmos fundamentales son viejos, la mayoría de los más destacados han sido descubiertos en las últimas décadas.
+
+}
+
+\subsection{Objetivos}
+
+\frame{\frametitle{\textcolor{black}{Finalidad del proyecto}}
+
+El objetivo es elaborar una aplicación informática que sea capaz de representar un grafo y los posibles algoritmos de procesado que se pueden aplicar a los grafos.
+
+\begin{itemize}
+\item Se mostrará en una primera instancia la representación del grafo una vez se haya introducido los valores asociados para las aristas o vértices.
+\item Una vez seleccionado el algoritmo de procesamiento o la operación pertinente se mostrará el grafo origen y el resultado de la operación en la misma ventana para resaltar los cambios efectuados por el procesamiento del algoritmo.
+\item Habrá un listado con los algoritmos más reseñables de la historia sobre teoría de grafos para aplicar sobre la estructura de grafos creada previamente.
+\end{itemize}
+
+}
+
+\subsection{Contexto histórico}
+
+\frame{\frametitle{\textcolor{black}{Primeros tiempos}}
+
+\begin{block}{Historia}
+El primer artículo sobre teoría de grafos fue escrito por el famoso matemático suizo Euler, y apareció en 1736. Desde un punto de vista matemático, la teoría de grafos parecía, en sus comienzos, bastante insignificante, puesto que se ocupaba principalmente de pasatiempos y rompecabezas. Sin embargo, avances recientes en las matemáticas y, especialmente, en sus aplicaciones han impulsado en gran medida la teoría de grafos. \\
+\end{block}
+
+}
+
+\subsection{Alcance}
+
+\frame{\frametitle{\textcolor{black}{Resultado final}}
+
+El proyecto Suite informática de Teoría Algorítmica de Grafos dará como resultado la aplicación Graphvisualx que cumplirá con todos los objetivos y especificaciones indicados.\\
+
+La aplicación Graphvisualx se distinguirá en varias partes: el contenido teórico de cada algoritmo a desarrollar como posible comprensión del desarrollo del mismo, el desarrollo de los algoritmos con una entrada ya sea bien en formato fichero o introducida desde la entrada de estándar en el momento de ejecución de la aplicación y contenidos bibliográficos haciendo incapie en algoritmos clásicos de la materia y su resolución desarrollada.\\
+
+}
+
+\subsection{Software utilizado}
+
+\frame{\frametitle{\textcolor{black}{Software utilizado}}
+
+En la realización de este proyecto se ha empleado el lenguaje de programación Java (J2ME) en su versión 1.6, empleando además la utilidad de openJDK para dicha plataforma Java.\newline
+
+Para la realización y estructuración del proyecto se ha empleado la herramienta IDE NetBeans v. 7.0.\newline
+
+La documentación y las figuras expuestas en este documento y derivados se han creado mediante el lenguaje de interpretación \LaTeX\ y para las figuras el paquete de opciones de tikz.\newline
+
+La aplicación gráfica Graphvisualx es software libre: usted puede redistribuirlo y / o modificar bajo los términos de la Licencia Pública General de GNU según lo publicado por la Free Software Foundation, ya sea la versión 3 de la Licencia, o (a su elección) cualquier versión posterior.\\
+\centering{\includegraphics[width=2cm]{gplv3.png}}
+
+
+}
+
+\section{Conceptos}
+
+\frame{\frametitle{\textcolor{black}{Generalidad}}
+
+Definiremos un grafo como un sistema matemático abstracto. No obstante, para desarrollar el conocimiento de los mismos de forma intuitiva los representaremos mediante diagramas. A estos diagramas les daremos también el nombre de grafos, aun cuando los términos y definiciones no estén limitados únicamente a los grafos que pueden representarse mediante diagramas.\newline
+
+Un grafo es un conjunto de puntos y un conjunto de líneas donde cada línea une un punto con otro.
+\begin{fondo}
+Llamaremos grafo, G, al par ordenado formado por un conjunto finito no vacío, V, y un conjunto, A, de pares no ordenados de elementos del mismo.\\
+\smallskip
+\quad V es el conjunto de los vértices o nodos del grafo.\\
+\smallskip
+\quad A será el conjunto de las aristas o arcos del grafo.\\
+\smallskip
+Utilizaremos la notación G = (V,A) para designar al grafo cuyos conjuntos de vértices y aristas son, respectivamente, V y A.
+\end{fondo}
+
+A cualquier arista de un grafo se le puede asociar una pareja de vértices del mismo. Si $u$ y $v$ son dos vértices de un grafo y la arista $a$ esta asociada con este par, escribiremos $a = uv$.\\
+
+}
+
+\section{Algoritmos}
+
+\frame{\frametitle{\textcolor{black}{Teoría algorítmica}}
+
+Se analizarán en profundidad todos los algoritmos tratados en el proyecto de fin de carrera intentando en la medida de lo posible una fácil comprensión para el lector falto de conocimientos básicos y para el que tenga unas nociones mayores sobre la materia. Los algoritmos a tratar serán muy variados:
+\begin{itemize}
+\item Caminos y Ciclos de Euler.
+\item Caminos y Ciclos de Hamilton.
+\item Grafos ponderados.
+\begin{itemize}
+\scriptsize{
+\item Caminos más cortos desde un vértice: Dijkstra.
+\item Caminos más cortos: Floyd.
+\item Existencia de caminos: Warshall.
+\item Árboles de expansión mínimos: Kruskal.
+\item Árboles de expansión mínimos: Prim.
+}
+\end{itemize}
+\item Búsqueda en grafos: en profundidad (Depth First Search).
+\item Búsqueda en grafos: en anchura (Breadth First Search).
+\item Vértice coloración: número cromático.
+\item Ordenación Topológica.
+\item Recorrido Hamiltoniano (planteado, no resuelto).
+\end{itemize}
+
+}
+
+\frame{\frametitle{\textcolor{black}{Ejemplo}}
+\vspace*{-.1in}{
+\begin{figure}[H]
+\includegraphics[width=7.25cm]{algoritmo_dijkstra.png}
+\caption{\scriptsize{Un grafo dirigido ponderado y los pasos que realiza el algoritmo de Dijkstra en el grafo. En cada paso se colorean los nuevos vértices y las nuevas aristas procesadas.}}
+\end{figure}
+}
+}
+
+\section{Complejidad}
+
+\frame{\frametitle{\textcolor{black}{La complejidad algorítmica}}
+
+Cuando tenemos que resolver un problema, es posible que estén disponibles varios algoritmos adecuados. Evidentemente, desearíamos seleccionar el mejor. Esto plantea la pregunta de cómo decidir entre varios algoritmos cuál es preferible. Si solamente tenemos que resolver uno o dos casos pequeños de un problema más bien sencillo, quizá no nos importe demasiado qué algoritmo utilizaremos: en este caso podríamos decidirnos a seleccionar sencillamente el que sea más fácil de programar, o uno para el cual ya exista un programa, sin preocuparnos por sus propiedades teóricas. Sin embargo, si tenemos que resolver muchos casos, o si el problema es difícil, quizá tengamos que seleccionar de forma más cuidadosa.\\
+
+}
+
+\section{Conclusiones}
+
+\frame{\frametitle{\textcolor{black}{Expectativas de futuro}}
+
+Durante la realización de la aplicación \emph{Graphvisualx: Suite informática de Teoría Algorítmica de Grafos} como trabajo de fin de carrera, he conseguido profundizar mi conocimiento sobre este mundo matemático y sus posibilidades de aplicaciones en la vida cotidiana cuya utilización va más allá de lo que cabría pensar. Además he profundizado en el conocimientos sobre la complejidad algorítmica y sus problemas importantes como son la Indecibilidad y la Intratabilidad. También he aprendido a manejar un nuevo lenguaje de programación, en este caso Java, dado que en la titulación hay muy pocas asignaturas en las cuales se imparta porque se sustituye por el lenguaje C y C++ en su mayoría. Dicho hecho ha ocasionado más de un retraso a la hora de realizar las implementaciones de los algoritmos y estructuras de datos, debido a la falta de práctica con este lenguaje como se comenta anteriormente.\\
+
+El producto obtenido de este proyecto de fin de carrera es un producto final. Por su naturaleza está ideado en principio para la trata y uso de los posibles algoritmos implementados en un principio, dado que no se facilita ningún soporte directo para la implementación de un mayor contenido algorítmico debido a ausencia del mismo o recientes descubrimientos de nuevas teorías algorítmicas.\\
+
+Se podrían implementar algoritmos de teoría de grafos sobre redes de comunicaciones o relaciones de ontología de la web que dado a la falta de conocimientos en la materia se han obviado para una posible actualización futura.\\
+
+}
+
+\section{Planificación temporal}
+
+\frame{\frametitle{\textcolor{black}{Diagrama de Gantt}}
+
+Para la elaboración de este proyecto de fin de carrera me ha sido necesario estudiar de nuevo el funcionamiento de muchos algoritmos sobre grafos que, previamente estudiados durante la titulación, había obviado en ciertos matices que habían que aclarar para acometer con precisión una implementación fina y eficiente.\\ Además, la falta de práctica con el lenguaje de programación Java también ha puesto de su parte para la demora de muchos puntos del proyecto.\\
+
+\begin{figure}[H]
+\includegraphics[width=5.5cm]{planificacion_recorte.png}
+\end{figure}
+
+}
+
+\section{Guía del usuario}
+
+\frame{\frametitle{\textcolor{black}{Como empezar}}
+
+Una interfaz gráfica de usuario (GUI) presenta un mecanismo amigable al usuario para interactuar con una aplicación. Una GUI proporciona a una aplicación una ``apariencia visual'' única. Al proporcionar distintas aplicaciones en las que los componentes de la interfaz de usuario sean consistentes e intuitivos, los usuarios pueden familiarizarse en cierto modo con una aplicación, de manera que pueden aprender a utilizarla en menor tiempo y con mayor productividad.\\
+
+\begin{figure}[H]
+\includegraphics[width=7.5cm]{captura_guia_usuario.png}
+\end{figure}
+
+
+}
+
+\section{Referencias}
+
+\frame{\frametitle{\textcolor{black}{Más importantes}}
+
+\begin{thebibliography}{10} 
+\beamertemplatebookbibitems 
+\bibitem{{\protect\color{red}{Goldback, 1742}}Goldback1742}[Goldback, 1742] 
+Christian Goldback. 
+\newblock \emph{Carta a Leonhard Euler}, 1742 
+\end{thebibliography} 
+
+}
+
+
+}
+\end{document}
+

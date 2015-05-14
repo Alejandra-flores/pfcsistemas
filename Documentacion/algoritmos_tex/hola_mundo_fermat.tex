@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+cp}{\PYZsh{}}\PY{c+cp}{include <stdlib.h>}
+\PY{c+cp}{\PYZsh{}}\PY{c+cp}{include <stdio.h>}
+
+\PY{k+kt}{int} \PY{n+nf}{exp}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{p}{,} \PY{k+kt}{int} \PY{n}{n}\PY{p}{)}
+\PY{c+cm}{/* calcula i a la potencia n */}
+\PY{p}{\PYZob{}}
+  \PY{k+kt}{int} \PY{n}{ans}\PY{p}{,} \PY{n}{j}\PY{p}{;}
+  \PY{n}{ans} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n}{j}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{;} \PY{n}{j} \PY{o}{<}\PY{o}{=} \PY{n}{n}\PY{p}{;} \PY{n}{j}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{n}{ans} \PY{o}{*}\PY{o}{=} \PY{n}{i}\PY{p}{;}
+  \PY{k}{return}\PY{p}{(}\PY{n}{ans}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{k+kt}{int} \PY{n+nf}{main}\PY{p}{(}\PY{p}{)}
+\PY{p}{\PYZob{}}
+  \PY{k+kt}{int} \PY{n}{n}\PY{p}{,} \PY{n}{total}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{z}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{\PYZpc{}d}\PY{l+s}{"}\PY{p}{,}\PY{o}{&}\PY{n}{n}\PY{p}{)}\PY{p}{;}
+  \PY{n}{total} \PY{o}{=} \PY{l+m+mi}{3}\PY{p}{;}
+  \PY{k}{while}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{\PYZob{}}
+    \PY{k}{for}\PY{p}{(}\PY{n}{x}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{;} \PY{n}{x} \PY{o}{<}\PY{o}{=} \PY{n}{total} \PY{o}{-} \PY{l+m+mi}{2}\PY{p}{;} \PY{n}{x}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+      \PY{k}{for}\PY{p}{(}\PY{n}{y}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{;} \PY{n}{y} \PY{o}{<}\PY{o}{=} \PY{n}{total} \PY{o}{-}\PY{n}{x} \PY{o}{-}\PY{l+m+mi}{1}\PY{p}{;} \PY{n}{y}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+	\PY{p}{\PYZob{}}
+	  \PY{n}{z} \PY{o}{=} \PY{n}{total} \PY{o}{-} \PY{n}{x} \PY{o}{-} \PY{n}{y}\PY{p}{;}
+	  \PY{k}{if}\PY{p}{(}\PY{n}{exp}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{n}\PY{p}{)} \PY{o}{+} \PY{n}{exp}\PY{p}{(}\PY{n}{y}\PY{p}{,}\PY{n}{n}\PY{p}{)} \PY{o}{=}\PY{o}{=} \PY{n}{exp}\PY{p}{(}\PY{n}{z}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{)}
+	    \PY{n}{printf}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{hola, mundo}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+	\PY{p}{\PYZcb{}}
+    \PY{n}{total}\PY{o}{+}\PY{o}{+}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}

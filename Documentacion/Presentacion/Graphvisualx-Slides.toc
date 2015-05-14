@@ -1,0 +1,17 @@
+\beamer@endinputifotherversion {3.10pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Presentaci\IeC {\'o}n}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introducci\IeC {\'o}n}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Contexto hist\IeC {\'o}rico}{4}{0}{1}
+\beamer@subsectionintoc {1}{3}{Conceptos}{5}{0}{1}
+\beamer@subsectionintoc {1}{4}{Estructura de datos}{6}{0}{1}
+\beamer@sectionintoc {2}{Algoritmos}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{Implementaci\IeC {\'o}n algoritmos}{10}{0}{2}
+\beamer@sectionintoc {3}{Planificaci\IeC {\'o}n temporal}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Objetivos}{15}{0}{3}
+\beamer@sectionintoc {4}{Aplicaci\IeC {\'o}n final}{16}{0}{4}
+\beamer@subsectionintoc {4}{1}{Alcance}{16}{0}{4}
+\beamer@subsectionintoc {4}{2}{Software utilizado}{17}{0}{4}
+\beamer@sectionintoc {5}{Gu\IeC {\'\i }a del usuario}{19}{0}{5}
+\beamer@sectionintoc {6}{Conclusiones}{20}{0}{6}
+\beamer@sectionintoc {7}{Referencias}{22}{0}{7}
