@@ -1,6 +1,0 @@
-public int[] recorrido_profunxdidad()
-public int[] recorrido_anchura()
-public boolean AciclicoGD(int [][] G)
-static boolean AciclicoGDRec(int vertice, int [][] G, int num_ancestros)
-private boolean AciclicoGND() 
-static boolean AciclicoGNDRec()
