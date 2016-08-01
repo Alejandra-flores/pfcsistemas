@@ -5,7 +5,7 @@ Aplicación gráfica que permite representar grafos y su posterior procesamiento
 
 Proyecto final de carrera para la titulación: Ingeniería Técnica Informática de Sistemas de la Universidad de Cádiz (Año 2012)
 
-![](https://github.com/MGautier/pfcsistemas/master/screenshot-1.jpeg)
-![](https://github.com/MGautier/pfcsistemas/master/screenshot-2.jpeg)
-![](https://github.com/MGautier/pfcsistemas/master/screenshot-3.jpeg)
-![](https://github.com/MGautier/pfcsistemas/master/screenshot-4.jpeg)
+![](https://github.com/MGautier/pfcsistemas/blob/master/screenshot-1.jpeg)
+![](https://github.com/MGautier/pfcsistemas/blob/master/screenshot-2.jpeg)
+![](https://github.com/MGautier/pfcsistemas/blob/master/screenshot-3.jpeg)
+![](https://github.com/MGautier/pfcsistemas/blob/master/screenshot-4.jpeg)
